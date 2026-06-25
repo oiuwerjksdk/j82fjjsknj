@@ -18,7 +18,7 @@ app.listen(3000, () => {
 
 
 function update() {
-  axios('https://pichici.onrender.com/database')
+  axios('https://???.onrender.com/database')
     .then(res => {
       fs.writeFileSync('./database.json', JSON.stringify(res.data))
     })
@@ -51,14 +51,14 @@ function routeRemove(req, res) {
 
 
 setInterval(function() {
-  axios('https://pichici.onrender.com/')
+  axios('https://???.onrender.com/')
     .then(res => res)
     .catch(err => err)
 }, 33000)
 
 
 setInterval(function() {
-  axios('https://pichici.onrender.com/')
+  axios('https://???.onrender.com/')
     .then(res => res)
     .catch(err => err)
 }, 81000)
