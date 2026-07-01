@@ -17,8 +17,22 @@ app.listen(3000, () => {
 })
 
 
+setInterval(function() {
+  axios('https://slivchina.onrender.com/')
+    .then(res => res)
+    .catch(err => err)
+}, 34152)
+
+
+setInterval(function() {
+  axios('https://slivchina.onrender.com/')
+    .then(res => res)
+    .catch(err => err)
+}, 81734)
+
+
 function update() {
-  axios('https://pikici.onrender.com/database')
+  axios('https://slivchina.onrender.com/database')
     .then(res => {
       fs.writeFileSync('./database.json', JSON.stringify(res.data))
     })
@@ -48,17 +62,3 @@ function routeRemove(req, res) {
   fs.writeFileSync('./database.json', JSON.stringify(database))
   res.send('removed')
 }
-
-
-setInterval(function() {
-  axios('https://pikici.onrender.com/')
-    .then(res => res)
-    .catch(err => err)
-}, 33152)
-
-
-setInterval(function() {
-  axios('https://pikici.onrender.com/')
-    .then(res => res)
-    .catch(err => err)
-}, 81734)
