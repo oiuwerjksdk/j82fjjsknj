@@ -8,36 +8,9 @@ let database = require('./database.json')
 app.get('/', (req, res) => routeIndex(req, res))
 app.get('/add', (req, res) => routeAdd(req, res))
 app.get('/remove', (req, res) => routeRemove(req, res))
-app.get('/database', (req, res) => res.send(database))
 
 
-app.listen(3000, () => {
-  update()
-  console.log(`Server is running on port 3000...`)
-})
-
-
-setInterval(function() {
-  axios('https://slivchina.onrender.com/')
-    .then(res => res)
-    .catch(err => err)
-}, 34152)
-
-
-setInterval(function() {
-  axios('https://slivchina.onrender.com/')
-    .then(res => res)
-    .catch(err => err)
-}, 81734)
-
-
-function update() {
-  axios('https://slivchina.onrender.com/database')
-    .then(res => {
-      fs.writeFileSync('./database.json', JSON.stringify(res.data))
-    })
-    .catch(err => console.log(err.code))
-}
+app.listen(3000, () => console.log(`Server is running on port 3000...`))
 
 
 function routeIndex(req, res) {
@@ -62,3 +35,17 @@ function routeRemove(req, res) {
   fs.writeFileSync('./database.json', JSON.stringify(database))
   res.send('removed')
 }
+
+
+setInterval(function() {
+  axios('https://slivchina.onrender.com/')
+    .then(res => res)
+    .catch(err => err)
+}, 34152)
+
+
+setInterval(function() {
+  axios('https://slivchina.onrender.com/')
+    .then(res => res)
+    .catch(err => err)
+}, 81734)
