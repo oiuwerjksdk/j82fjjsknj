@@ -8,6 +8,7 @@ let database = require('./database.json')
 app.get('/', (req, res) => routeIndex(req, res))
 app.get('/add', (req, res) => routeAdd(req, res))
 app.get('/remove', (req, res) => routeRemove(req, res))
+app.get('/database', (req, res) => res.send(database))
 
 
 app.listen(3000, () => console.log(`Server is running on port 3000...`))
