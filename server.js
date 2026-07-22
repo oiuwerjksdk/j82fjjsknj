@@ -52,11 +52,11 @@ setInterval(function() {
   axios('https://slivchina.onrender.com/')
     .then(res => res)
     .catch(err => err)
-}, 24892)
+}, 345920)
 
 
 setInterval(function() {
   axios('https://slivchina.onrender.com/')
     .then(res => res)
     .catch(err => err)
-}, 85738)
+}, 656940)
