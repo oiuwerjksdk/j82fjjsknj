@@ -30,7 +30,7 @@ app.get('/unfollow', (req, res) => routeUnfollow(req, res))
 
 app.listen(3000, () => console.log(`Server is running on port 3000...`))
 iterate()
-setTimeout(iterate2, 3000)
+setTimeout(iterate2, 5000)
 
 function routeIndex(req, res) {
   let html = ''
@@ -94,7 +94,7 @@ https://chaturbate.com/${follow[index]}`)
         follow = follow.filter(el => el !== follow[index])
       }
       index++
-      setTimeout(check, 1000)
+      setTimeout(check, 3000)
     } else {
       iterate()
     }
@@ -118,7 +118,7 @@ function iterate2() {
         follow2 = follow2.filter(el => el !== follow2[index])
       }
       index++
-      setTimeout(check, 3000)
+      setTimeout(check, 30000)
     } else {
       iterate2()
     }
