@@ -106,7 +106,6 @@ function iterate2() {
   let index = 0
   follow2.length ? check() : setTimeout(iterate2, 1000)
 
-
   async function check() {
     if (index < follow2.length) {
       const res = await axios(`https://jpeg.live.mmcdn.com/stream?room=${follow2[index]}&f=${Math.random()}`, {
