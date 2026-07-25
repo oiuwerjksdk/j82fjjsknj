@@ -96,8 +96,7 @@ function iterate() {
       if (res.status == 200) {
         // console.log('mock notify about', slivche)
         sendMaileroo('sobelotokuche@protonmail.com', `${slivche} is online`, `${slivche} is online:
-            }
-        https://chaturbate.com/${slivche}`)
+https://chaturbate.com/${slivche}`)
         follow2.unshift(slivche)
         follow = follow.filter(el => el !== slivche)
       }
@@ -136,7 +135,7 @@ function iterate2() {
 function sendMaileroo(to, subject, plain) {
   const config = {
     "from": {
-      "address": "slivchina@c9c7843d277b40a0.maileroo.org",
+      "address": "slivchina@546efd10e8c3419e.maileroo.org",
       "display_name": "slivchina.onrender.com"
     },
     "to": [{
@@ -149,7 +148,7 @@ function sendMaileroo(to, subject, plain) {
       signal: AbortSignal.timeout(4000),
       headers: {
         "Content-Type": "application/json",
-        "X-Api-Key": '723eb9048e7d19db5c183b8ac4145304a6d36b5b9a79a48e9a7de516d0ed72e3'
+        "X-Api-Key": '096308984c35ee8ed28cb5c34ecd5d34f71ce1fb522d1cf282d064e9ec9cab6f'
       }
     })
     .then(res => console.log(res.status, 'maileroo OK'))
