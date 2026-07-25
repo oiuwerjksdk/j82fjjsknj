@@ -87,7 +87,7 @@ function iterate() {
 
     let slivche = arr[index]
     index++
-    setTimeout(check, 1000)
+    setTimeout(check, 5000)
     try {
       const res = await axios(`https://jpeg.live.mmcdn.com/stream?room=${slivche}&f=${Math.random()}`, {
         signal: AbortSignal.timeout(4000)
@@ -118,7 +118,7 @@ function iterate2() {
     }
     let slivche = arr[index]
     index++
-    setTimeout(check, 3000)
+    setTimeout(check, 10000)
     try {
       const res = await axios(`https://jpeg.live.mmcdn.com/stream?room=${slivche}&f=${Math.random()}`, {
         signal: AbortSignal.timeout(4000)
