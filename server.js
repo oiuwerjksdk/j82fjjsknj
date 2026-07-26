@@ -100,7 +100,7 @@ function iterate() {
         // console.log('mock notify about', slivche)
         sendMaileroo('sobelotokuche@protonmail.com', `${slivche} is online`, `${slivche} is online:
 https://chaturbate.com/${slivche}`)
-        follow2.unshift(slivche)
+        db.includes(slivche) ? follow2.unshift(slivche) : 0
         follow = follow.filter(el => el !== slivche)
       }
     } catch (err) { console.log(err.message, slivche) }
@@ -160,14 +160,14 @@ function sendMaileroo(to, subject, plain) {
 
 
 setInterval(function() {
-  axios('https://slivchina.onrender.com/')
+  axios('https://slivchina.onrender.com/db')
     .then(res => res)
     .catch(err => err)
-}, 345920)
+}, 459388)
 
 
 setInterval(function() {
-  axios('https://slivchina.onrender.com/')
+  axios('https://slivchina.onrender.com/db')
     .then(res => res)
     .catch(err => err)
-}, 656940)
+}, 735938)
