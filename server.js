@@ -15,7 +15,10 @@ let db = [
   "ellediane",
   "kim_red_"
 ]
-let follow = []
+let follow = [
+  "sabi_wii",
+  "_mariarty_"
+]
 let follow2 = []
 
 app.get('/', (req, res) => routeIndex(req, res))
