@@ -127,7 +127,7 @@ function iterate2() {
         follow.unshift(slivche)
         follow2 = follow2.filter(el => el !== slivche)
       }
-    } catch (errc) { console.log(err.message, slivche) }
+    } catch (err) { console.log(err.message, slivche) }
   }
 }
 
