@@ -2,6 +2,7 @@ const axios = require('axios')
 const express = require('express')
 const app = express()
 let db = [
+  "mya_gold",
   "antonella_silva",
   "tntluvs",
   "krissone",
@@ -17,10 +18,7 @@ let db = [
   "ellediane",
   "kim_red_",
 ]
-let follow = [
-  "sabi_wii",
-  "_mariarty_"
-]
+let follow = []
 let follow2 = []
 
 app.get('/', (req, res) => routeIndex(req, res))
