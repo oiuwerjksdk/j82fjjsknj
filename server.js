@@ -2,6 +2,8 @@ const axios = require('axios')
 const express = require('express')
 const app = express()
 let db = [
+  "antonella_silva",
+  "tntluvs",
   "krissone",
   "sabrinajadex",
   "nicole_anistonn",
@@ -13,7 +15,7 @@ let db = [
   "_mariarty_",
   "nadeen_",
   "ellediane",
-  "kim_red_"
+  "kim_red_",
 ]
 let follow = [
   "sabi_wii",
@@ -90,7 +92,7 @@ function iterate() {
 
     let slivche = arr[index]
     index++
-    setTimeout(check, 5000)
+    setTimeout(check, 1000 * 10)
     try {
       const res = await axios(`https://jpeg.live.mmcdn.com/stream?room=${slivche}&f=${Math.random()}`, {
         signal: AbortSignal.timeout(4000)
@@ -120,7 +122,7 @@ function iterate2() {
     }
     let slivche = arr[index]
     index++
-    setTimeout(check, 1000 * 60 * 10)
+    setTimeout(check, 1000 * 60 * 5)
     try {
       const res = await axios(`https://jpeg.live.mmcdn.com/stream?room=${slivche}&f=${Math.random()}`, {
         signal: AbortSignal.timeout(4000)
