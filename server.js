@@ -2,6 +2,8 @@ const axios = require('axios')
 const express = require('express')
 const app = express()
 let db = [
+  "rosevanessa",
+  "miarouss3",
   "mya_gold",
   "antonella_silva",
   "tntluvs",
@@ -160,14 +162,14 @@ function sendMaileroo(to, subject, plain) {
 
 
 setInterval(function() {
-  axios('https://slivchina.onrender.com/db')
+  axios('https://slivchina.onrender.com/fl')
     .then(res => res)
     .catch(err => err)
 }, 459388)
 
 
 setInterval(function() {
-  axios('https://slivchina.onrender.com/db')
+  axios('https://slivchina.onrender.com/fl2')
     .then(res => res)
     .catch(err => err)
 }, 735938)
