@@ -2,6 +2,13 @@ const axios = require('axios')
 const express = require('express')
 const app = express()
 let db = [
+  "emmaandjake",
+  "erohaze",
+  "brittnirehberger",
+  "tinyangelxx",
+  "miladystarlight",
+  "adelia_ntmu",
+  "wow_peach_girl",
   "rosevanessa",
   "miarouss3",
   "mya_gold",
@@ -27,10 +34,10 @@ app.get('/', (req, res) => routeIndex(req, res))
 app.get('/db', (req, res) => res.send(db))
 app.get('/fl', (req, res) => res.send(follow))
 app.get('/fl2', (req, res) => res.send(follow2))
-app.get('/add', (req, res) => routeAdd(req, res))
-app.get('/remove', (req, res) => routeRemove(req, res))
 app.get('/follow', (req, res) => routeFollow(req, res))
 app.get('/unfollow', (req, res) => routeUnfollow(req, res))
+app.get('/add', (req, res) => routeAdd(req, res))
+app.get('/remove', (req, res) => routeRemove(req, res))
 
 
 app.listen(3000, () => console.log(`Server is running on port 3000...`))
