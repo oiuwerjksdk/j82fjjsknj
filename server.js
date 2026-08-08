@@ -99,7 +99,7 @@ function iterate() {
 
     let slivche = arr[index]
     index++
-    setTimeout(check, 1000 * 10)
+    setTimeout(check, 1000 * 5)
     try {
       const res = await axios(`https://jpeg.live.mmcdn.com/stream?room=${slivche}&f=${Math.random()}`, {
         signal: AbortSignal.timeout(4000)
@@ -129,7 +129,7 @@ function iterate2() {
     }
     let slivche = arr[index]
     index++
-    setTimeout(check, 1000 * 60 * 5)
+    setTimeout(check, 1000 * 60)
     try {
       const res = await axios(`https://jpeg.live.mmcdn.com/stream?room=${slivche}&f=${Math.random()}`, {
         signal: AbortSignal.timeout(4000)
@@ -172,11 +172,11 @@ setInterval(function() {
   axios('https://slivchina.onrender.com/fl')
     .then(res => res)
     .catch(err => err)
-}, 459388)
+}, 528909)
 
 
 setInterval(function() {
   axios('https://slivchina.onrender.com/fl2')
     .then(res => res)
     .catch(err => err)
-}, 735938)
+}, 726381)
