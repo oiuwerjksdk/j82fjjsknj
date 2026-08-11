@@ -8,10 +8,11 @@ let girls = ["alexxisrae", "inspire4sex", "vivid_girls", "splendid_dolls", "jjen
 app.get('/', (req, res) => routeIndex(req, res))
 app.get('/girls', (req, res) => res.send(girls))
 app.get('/followed', (req, res) => res.send(followed))
-app.get('/add', (req, res) => routeAdd(req, res))
-app.get('/remove', (req, res) => routeRemove(req, res))
 app.get('/follow', (req, res) => routeFollow(req, res))
 app.get('/unfollow', (req, res) => routeUnfollow(req, res))
+app.get('/add', (req, res) => routeAdd(req, res))
+app.get('/remove', (req, res) => routeRemove(req, res))
+
 
 app.listen(3000, () => {
   console.log(`Server is running on port 3000...`)
