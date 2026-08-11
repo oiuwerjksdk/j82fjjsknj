@@ -1,55 +1,27 @@
 const axios = require('axios')
 const express = require('express')
 const app = express()
-let db = [
-  "emmaandjake",
-  "erohaze",
-  "brittnirehberger",
-  "tinyangelxx",
-  "miladystarlight",
-  "adelia_ntmu",
-  "wow_peach_girl",
-  "rosevanessa",
-  "miarouss3",
-  "mya_gold",
-  "antonella_silva",
-  "tntluvs",
-  "krissone",
-  "sabrinajadex",
-  "nicole_anistonn",
-  "bad__princess",
-  "devyale",
-  "belle_emmanuelle",
-  "sabi_wii",
-  "tastypoint",
-  "_mariarty_",
-  "nadeen_",
-  "ellediane",
-  "kim_red_",
-]
-let follow = []
-let follow2 = []
+let followed = []
+let girls = ["alexxisrae", "inspire4sex", "vivid_girls", "splendid_dolls", "jjennnyy", "_eva_queen", "anny54784", "malenkiykamen", "emmaandjake", "erohaze", "brittnirehberger", "tinyangelxx", "miladystarlight", "adelia_ntmu", "wow_peach_girl", "miarouss3", "mya_gold", "antonella_silva", "tntluvs", "krissone", "sabrinajadex", "nicole_anistonn", "bad__princess", "devyale", "belle_emmanuelle", "sabi_wii", "tastypoint", "_mariarty_", "nadeen_", "ellediane", "kim_red_"]
+
 
 app.get('/', (req, res) => routeIndex(req, res))
-app.get('/db', (req, res) => res.send(db))
-app.get('/fl', (req, res) => res.send(follow))
-app.get('/fl2', (req, res) => res.send(follow2))
-app.get('/follow', (req, res) => routeFollow(req, res))
-app.get('/unfollow', (req, res) => routeUnfollow(req, res))
+app.get('/girls', (req, res) => res.send(girls))
+app.get('/followed', (req, res) => res.send(followed))
 app.get('/add', (req, res) => routeAdd(req, res))
 app.get('/remove', (req, res) => routeRemove(req, res))
+app.get('/follow', (req, res) => routeFollow(req, res))
+app.get('/unfollow', (req, res) => routeUnfollow(req, res))
 
-
-app.listen(3000, () => console.log(`Server is running on port 3000...`))
-
-
-iterate()
-setTimeout(iterate2, 5000)
+app.listen(3000, () => {
+  console.log(`Server is running on port 3000...`)
+  iterate()
+})
 
 
 function routeIndex(req, res) {
   let html = ''
-  db.forEach(el => {
+  girls.forEach(el => {
     html +=
       `<img src="https://jpeg.live.mmcdn.com/stream?room=${el}&f=${Math.random()}" alt="${el}" width="280" height="160" onclick="window.open('https://chaturbate.com/${el}','_blank', 'noopener,noreferrer')">`
   })
@@ -58,37 +30,34 @@ function routeIndex(req, res) {
 
 
 function routeAdd(req, res) {
-  if (!db.includes(req.query.name)) {
-    db.unshift(req.query.name)
+  if (!girls.includes(req.query.name)) {
+    girls.unshift(req.query.name)
   }
   res.send('added')
 }
 
 
 function routeRemove(req, res) {
-  db = db.filter(el => el !== req.query.name)
-  follow = follow.filter(el => el !== req.query.name)
-  follow2 = follow2.filter(el => el !== req.query.name)
+  girls = girls.filter(el => el !== req.query.name)
   res.send('removed :(')
 }
 
 
 function routeFollow(req, res) {
-  if (!follow.includes(req.query.name) && !follow2.includes(req.query.name)) { follow.unshift(req.query.name) }
+  !followed.includes(req.query.name) ? followed.unshift(req.query.name) : 0
   res.send('followed')
 }
 
 
 function routeUnfollow(req, res) {
-  follow = follow.filter(el => el !== req.query.name)
-  follow2 = follow2.filter(el => el !== req.query.name)
+  followed = followed.filter(el => el !== req.query.name)
   res.send('unfollowed :(')
 }
 
 
 function iterate() {
   let index = 0
-  let arr = [...follow]
+  let arr = [...followed]
   arr.length ? check() : setTimeout(iterate, 1000)
 
   async function check() {
@@ -97,49 +66,21 @@ function iterate() {
       return
     }
 
-    let slivche = arr[index]
+    let girl = arr[index]
     index++
-    setTimeout(check, 1000 * 5)
+    setTimeout(check, 1000 * 10)
     try {
-      const res = await axios(`https://jpeg.live.mmcdn.com/stream?room=${slivche}&f=${Math.random()}`, {
+      const res = await axios(`https://jpeg.live.mmcdn.com/stream?room=${girl}&f=${Math.random()}`, {
         signal: AbortSignal.timeout(4000)
       })
-      console.log(slivche, res.status)
+      console.log(girl, res.status)
       if (res.status == 200) {
-        // console.log('mock notify about', slivche)
-        sendMaileroo('sobelotokuche@protonmail.com', `${slivche} is online`, `${slivche} is online:
-https://chaturbate.com/${slivche}`)
-        db.includes(slivche) ? follow2.unshift(slivche) : 0
-        follow = follow.filter(el => el !== slivche)
+        // console.log('mock notify about', girl)
+        sendMaileroo('sobelotokuche@protonmail.com', `${girl} is online`, `${girl} is online:
+https://chaturbate.com/${girl}`)
+        followed = followed.filter(el => el !== girl)
       }
-    } catch (err) { console.log(err.message, slivche) }
-  }
-}
-
-
-function iterate2() {
-  let index = 0
-  let arr = [...follow2]
-  arr.length ? check() : setTimeout(iterate2, 1000)
-
-  async function check() {
-    if (index == arr.length) {
-      iterate2()
-      return
-    }
-    let slivche = arr[index]
-    index++
-    setTimeout(check, 1000 * 60)
-    try {
-      const res = await axios(`https://jpeg.live.mmcdn.com/stream?room=${slivche}&f=${Math.random()}`, {
-        signal: AbortSignal.timeout(4000)
-      })
-      console.log(slivche, res.status)
-      if (res.status !== 200) {
-        follow.unshift(slivche)
-        follow2 = follow2.filter(el => el !== slivche)
-      }
-    } catch (err) { console.log(err.message, slivche) }
+    } catch (err) { console.log(err.message, girl) }
   }
 }
 
