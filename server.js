@@ -1,8 +1,8 @@
 const axios = require('axios')
 const express = require('express')
 const app = express()
-let followed = []
-let girls = ["alexxisrae", "inspire4sex", "vivid_girls", "splendid_dolls", "jjennnyy", "_eva_queen", "anny54784", "malenkiykamen", "emmaandjake", "erohaze", "brittnirehberger", "tinyangelxx", "miladystarlight", "adelia_ntmu", "wow_peach_girl", "miarouss3", "mya_gold", "antonella_silva", "tntluvs", "krissone", "sabrinajadex", "nicole_anistonn", "bad__princess", "devyale", "belle_emmanuelle", "sabi_wii", "tastypoint", "_mariarty_", "nadeen_", "ellediane", "kim_red_"]
+let followed = ['sabi_wii']
+let girls = ["alexxisrae", "inspire4sex", "splendid_dolls", "jjennnyy", "_eva_queen", "anny54784", "malenkiykamen", "emmaandjake", "erohaze", "brittnirehberger", "tinyangelxx", "miladystarlight", "adelia_ntmu", "wow_peach_girl", "miarouss3", "mya_gold", "antonella_silva", "tntluvs", "krissone", "sabrinajadex", "nicole_anistonn", "bad__princess", "devyale", "belle_emmanuelle", "sabi_wii", "tastypoint", "_mariarty_", "nadeen_", "ellediane", "kim_red_"]
 
 
 app.get('/', (req, res) => routeIndex(req, res))
